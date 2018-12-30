@@ -21,6 +21,32 @@ export class AppComponent {
       children: null
     },
     {
+      title: 'Customers',
+      url: '',
+      icon: 'people',
+      color: 'default',
+      isActive: true,
+      expanded: false,
+      children: [
+        {
+          title: 'Add Customer',
+          url: '/customer-add',
+          icon: '',
+          color: 'default',
+          isActive: true,
+          children: null
+        },
+        {
+          title: 'List Customers',
+          url: '/customer-list',
+          icon: '',
+          color: 'default',
+          isActive: true,
+          children: null
+        }
+      ]
+    },
+    {
       title: 'Settings',
       url: '/settings',
       icon: 'settings',
@@ -46,5 +72,8 @@ export class AppComponent {
     });
   }
 
+  toggleMenuList(menu: NavMenuItem) {
+    menu.expanded = !menu.expanded;
+  }
 
 }

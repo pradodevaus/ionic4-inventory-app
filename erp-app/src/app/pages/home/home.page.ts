@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { PopoverMenuComponent } from '../../shared/components/popover-menu/popover-menu.component';
+import { NavMenuItem } from '../../models/NavMenuItem';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,15 @@ export class HomePage implements OnInit {
   constructor(public popoverController: PopoverController) { }
 
   ngOnInit() {
+    const abc: NavMenuItem =  {
+      title: 'Home',
+      url: '/home',
+      icon: 'home',
+      color: 'default',
+      isActive: true,
+      children: null
+    };
+    console.log(abc);
   }
 
   async presentPopover(ev: any) {
