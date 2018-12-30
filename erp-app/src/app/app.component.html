@@ -8,59 +8,27 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ng-container *ngFor="let menu of menus">
-
-            <ng-container *ngIf="!menu.children">
-              <ion-menu-toggle auto-hide="false">
-                <ion-item lines="full" [routerDirection]="'root'" [routerLink]="[menu.url]" detail="false">
-                  <ion-icon [color]="menu.color" slot="start" [name]="menu.icon"></ion-icon>
-                  <ion-label [color]="menu.color">
-                    {{menu.title}}
-                  </ion-label>
-                </ion-item>
-              </ion-menu-toggle>
-            </ng-container>
-
-            <ng-container *ngIf="menu.children">
-              <ion-item lines="full" (click)="toggleMenuList(menu)">
-                <ion-icon [color]="menu.color" slot="start" [name]="menu.icon"></ion-icon>
-                <ion-label [color]="menu.color">
-                  {{menu.title}}
-                </ion-label>
-                <ion-icon [color]="menu.color" slot="end" name="arrow-dropdown" class="menu-children" [class.rotate]="menu.expanded"></ion-icon>
-              </ion-item>
-
-              <div class="sub-menu-container" [style.height]="menu.expanded ? (50 * menu.children.length) + 'px' : '0px'">
-                <ng-container *ngFor="let subMenu of menu.children">
-                  <ion-menu-toggle auto-hide="false">
-                    <ion-item lines="full" [routerDirection]="'root'" [routerLink]="[subMenu.url]" detail="false">
-                      <ion-icon [color]="subMenu.color" slot="start" [name]="subMenu.icon"></ion-icon>
-                      <ion-label [color]="subMenu.color">
-                        {{subMenu.title}}
-                      </ion-label>
-                    </ion-item>
-                  </ion-menu-toggle>
-                </ng-container>
-              </div>
-
-
-
-            </ng-container>
-
-          </ng-container>
+          <ion-menu-toggle auto-hide="false" *ngFor="let menu of menus">
+            <ion-item lines="full" [routerDirection]="'root'" [routerLink]="[menu.url]">
+              <ion-icon [color]="menu.color" slot="start" [name]="menu.icon"></ion-icon>
+              <ion-label [color]="menu.color">
+                {{menu.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
       <ion-footer>
         <ion-toolbar>
           <!-- <ion-list> -->
-          <ion-menu-toggle auto-hide="false">
-            <ion-item lines="none" [routerDirection]="'root'" [routerLink]="['/logout']">
-              <ion-icon color="danger" slot="start" name="log-out"></ion-icon>
-              <ion-label color="danger">
-                Logout
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item lines="none" [routerDirection]="'root'" [routerLink]="['/logout']">
+                <ion-icon color="danger" slot="start" name="log-out"></ion-icon>
+                <ion-label color="danger">
+                  Logout
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
           <!-- </ion-list> -->
         </ion-toolbar>
       </ion-footer>

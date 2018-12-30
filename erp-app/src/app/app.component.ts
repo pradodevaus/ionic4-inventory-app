@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NavMenuItem } from './models/NavMenuItem';
+import { menuConfig } from './shared/menu.config';
 
 @Component({
   selector: 'app-root',
@@ -11,50 +12,7 @@ import { NavMenuItem } from './models/NavMenuItem';
 })
 export class AppComponent {
 
-  menus: NavMenuItem[] = [
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home',
-      color: 'default',
-      isActive: true,
-      children: null
-    },
-    {
-      title: 'Customers',
-      url: '',
-      icon: 'people',
-      color: 'default',
-      isActive: true,
-      expanded: false,
-      children: [
-        {
-          title: 'Add Customer',
-          url: '/customer-add',
-          icon: '',
-          color: 'default',
-          isActive: true,
-          children: null
-        },
-        {
-          title: 'List Customers',
-          url: '/customer-list',
-          icon: '',
-          color: 'default',
-          isActive: true,
-          children: null
-        }
-      ]
-    },
-    {
-      title: 'Settings',
-      url: '/settings',
-      icon: 'settings',
-      color: 'default',
-      isActive: true,
-      children: null
-    }
-  ];
+  menus: NavMenuItem[] = menuConfig;
 
   constructor(
     private platform: Platform,
@@ -71,9 +29,4 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
-
-  toggleMenuList(menu: NavMenuItem) {
-    menu.expanded = !menu.expanded;
-  }
-
 }
