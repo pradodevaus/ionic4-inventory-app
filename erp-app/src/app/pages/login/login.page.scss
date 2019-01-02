@@ -1,0 +1,29 @@
+.logo {
+    text-align: center;
+
+    img {
+        width: 120px;
+        margin: 0;
+    }
+}
+
+.btn-login {
+    margin: 20px 0;
+}
+
+.btn-reset-pwd {
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+}
+
+.btn-signup {
+    margin: 50px 0 0;
+}
+
+ion-grid,
+ion-row { 
+    height: 100%; 
+}

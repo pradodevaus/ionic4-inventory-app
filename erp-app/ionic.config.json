@@ -1,5 +1,7 @@
 {
   "name": "erpApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
