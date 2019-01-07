@@ -8,15 +8,17 @@
 }
 
 .btn-login {
-    margin: 20px 0;
+    margin: 10px 0 20px;
 }
 
 .btn-reset-pwd {
-
-    text-decoration: none;
     text-align: center;
-    font-size: 14px;
     display: block;
+}
+
+.btn-reset-pwd > a{
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .btn-signup {

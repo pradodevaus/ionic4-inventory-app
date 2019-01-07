@@ -1,31 +1,4 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content padding>
-  <!--<div class=logo>
-    <img src="../assets/icon/logo.png" alt="logo">
-  </div>
-
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <ion-button class="btn-login" expand="full" color="primary">Login</ion-button>
-  
-  <a class="btn-reset-pwd" href="/reset-pwd">Forgot Password?</a>
-
-  <ion-button class="btn-signup" expand="full" color="secondary">Sign Up</ion-button>-->
-
   <ion-grid>
     <ion-row align-items-center>
       <ion-col>
@@ -33,22 +6,25 @@
           <img src="../assets/icon/logo.png" alt="logo">
         </div>
 
-        <ion-list>
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-        </ion-list>
+        <form (ngSubmit)="login()">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </ion-list>
 
-        <ion-button class="btn-login" expand="full" color="primary">Login</ion-button>
+          <ion-button class="btn-login" expand="full" color="primary" disabled="true">Login</ion-button>
+        </form>
 
-        <a class="btn-reset-pwd" href="/reset-pwd">Forgot Password?</a>
+        <div class="btn-reset-pwd"><a routerLink="/reset-password" routerDirection="forward">Forgot Password?</a></div>
 
-        <ion-button class="btn-signup" expand="full" color="secondary">Sign Up</ion-button>
+        <ion-button class="btn-signup" expand="full" color="secondary" routerLink="/signup" routerDirection="forward">Sign
+          Up</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
