@@ -6,7 +6,7 @@
           <img src="../assets/icon/logo.png" alt="logo">
         </div>
 
-        <form (ngSubmit)="login()">
+        <form>
           <ion-list>
             <ion-item>
               <ion-label position="floating">Email</ion-label>
@@ -18,7 +18,7 @@
             </ion-item>
           </ion-list>
 
-          <ion-button class="btn-login" expand="full" color="primary" disabled="true">Login</ion-button>
+          <ion-button class="btn-login" expand="full" color="primary" disabled="false" (click)="login()">Login</ion-button>
         </form>
 
         <div class="btn-reset-pwd"><a routerLink="/reset-password" routerDirection="forward">Forgot Password?</a></div>

@@ -3,7 +3,15 @@
     <ion-menu type="overlay">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Menu</ion-title>
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src="https://secure.gravatar.com/avatar/ece989176d2a115a5075cce520da07a3" />
+            </ion-avatar>
+            <ion-label>
+              <h2>Pradeep Chouhan</h2>
+              <p>Role: Admin</p>
+            </ion-label>
+          </ion-item>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -21,14 +29,14 @@
       <ion-footer>
         <ion-toolbar>
           <!-- <ion-list> -->
-            <ion-menu-toggle auto-hide="false">
-              <ion-item lines="none" [routerDirection]="'root'" [routerLink]="['/logout']">
-                <ion-icon color="danger" slot="start" name="log-out"></ion-icon>
-                <ion-label color="danger">
-                  Logout
-                </ion-label>
-              </ion-item>
-            </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none" [routerDirection]="'root'" [routerLink]="['/logout']">
+              <ion-icon color="danger" slot="start" name="log-out"></ion-icon>
+              <ion-label color="danger">
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
           <!-- </ion-list> -->
         </ion-toolbar>
       </ion-footer>
